@@ -15,3 +15,17 @@
     transform: scale(1)
   }
 }
+
+@keyframes pulse {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scale3d(1.25, 1.25, 1.25);
+  }
+  40% {
+    transform: scaleX(1);
+  }
+}
+  
+   

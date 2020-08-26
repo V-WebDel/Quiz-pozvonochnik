@@ -1,3 +1,172 @@
 .section-quiz#section-quiz
   .container
     .quiz
+      .quiz__slide.slide
+        span.slide__current 1
+        | /
+        span.slide__summ
+      .quiz__steps
+      .quiz__steps_final Опрос завершен
+
+      form.quiz__form(method="post" action="")
+        .quiz__tab.quiz__tab_first
+          .quiz__question.question
+            span.question__number 1
+            span.question__main.wow Беспокоят ли Вас симптомы, приведенные ниже?
+            span.question__hint Выберите один или несколько вариантов
+          .quiz__inner
+            .quiz__options.options
+              .options__wrap
+                .options__item
+                  .checkbox.checkbox_add
+                    input.checkbox__default(id="symptoms_1" type="checkbox" name="Боль в области спины и шеи при наклоне и повороте")
+                    span.checkbox__new
+                    label.checkbox__label(for="symptoms_1") Боль в области спины и шеи при наклоне и повороте
+                  .checkbox.checkbox_add
+                    input.checkbox__default(id="symptoms_2" type="checkbox" name="Асимметрия плеч и лопаток")
+                    span.checkbox__new
+                    label.checkbox__label(for="symptoms_2") Асимметрия плеч и лопаток
+                  .checkbox.checkbox_add
+                    input.checkbox__default(id="symptoms_3" type="checkbox" name="Трудно держать спину прямо")
+                    span.checkbox__new
+                    label.checkbox__label(for="symptoms_3") Трудно держать спину прямо
+                  .checkbox.checkbox_add
+                    input.checkbox__default(id="symptoms_4" type="checkbox" name="Головные боли, шум в ушах")
+                    span.checkbox__new
+                    label.checkbox__label(for="symptoms_4") Головные боли, шум в ушах
+                  .checkbox.checkbox_add
+                    input.checkbox__default(id="symptoms_5" type="checkbox" name="Бывает все вышеперечисленное")
+                    span.checkbox__new
+                    label.checkbox__label(for="symptoms_5") Бывает все вышеперечисленное
+                .options__item
+                  +image('quiz/', '1', 'Фото позвоночника', 'Зоны позвоночника', 'jpg')(class="options__image")
+        
+        .quiz__tab
+          .quiz__question.question
+            span.question__number 2
+            span.question__main.wow Какова причина боли в спине, по Вашему мнению?
+            span.question__hint Выберите один вариант
+          .quiz__inner
+            .quiz__options.options
+              .options__wrap
+                .options__item
+                  .radio
+                    input.radio__input(id="cause_1" name="Lead[cause_of_pain]" type="radio" value="Травма")
+                    label.radio__label(for="cause_1") Травма
+                  .radio
+                    input.radio__input(id="cause_2" name="Lead[cause_of_pain]" type="radio" value="Малоподвижный образ жизни")
+                    label.radio__label(for="cause_2") Малоподвижный образ жизни
+                  .radio
+                    input.radio__input(id="cause_3" name="Lead[cause_of_pain]" type="radio" value="Лишний вес")
+                    label.radio__label(for="cause_3") Лишний вес
+                  .radio
+                    input.radio__input(id="cause_4" name="Lead[cause_of_pain]" type="radio" value="Затрудняюсь ответить")
+                    label.radio__label(for="cause_4") Затрудняюсь ответить
+                .options__item
+                  +image('quiz/', '2', 'Фото человека в офисе', 'Человек держится за спину', 'jpg')(class="options__image")
+          
+        .quiz__tab
+          .quiz__question.question
+            span.question__number 3
+            span.question__main.wow Как часто Вы проходите обследование позвоночника?
+            span.question__hint Выберите один вариант
+          .quiz__inner
+            .quiz__options.options
+              .options__wrap
+                .options__item
+                  .radio
+                    input.radio__input(id="examination_1" name="Lead[examination]" type="radio" value="Если не могу снять боль в спине")
+                    label.radio__label(for="examination_1") Если не могу снять боль в спине
+                  .radio
+                    input.radio__input(id="examination_2" name="Lead[examination]" type="radio" value="Не обследуюсь - нет времени и средств")
+                    label.radio__label(for="examination_2") Не обследуюсь - нет времени и средств
+                  .radio
+                    input.radio__input(id="examination_3" name="Lead[examination]" type="radio" value="Не верю, что позвоночник можно вылечить в моем возрасте")
+                    label.radio__label(for="examination_3") Не верю, что позвоночник можно вылечить в моем возрасте
+                  .radio
+                    input.radio__input(id="examination_4" name="Lead[examination]" type="radio" value="Боль в спине не главная моя проблема со здоровьем")
+                    label.radio__label(for="examination_4") Боль в спине не главная моя проблема со здоровьем
+                .options__item
+                  +image('quiz/', '3', 'Фото макета позвоночника', 'Изучение позвоночника по визуальному макету', 'jpg')(class="options__image")
+          
+        .quiz__tab
+          .quiz__question.question
+            span.question__number 4
+            span.question__main.wow Хотите точную диагностику на 3D-сканере «Траст-М»<br> и консультацию невролога бесплатно?
+            span.question__hint Выберите один вариант
+          .quiz__inner
+            .quiz__options.options
+              .options__wrap
+                .options__item
+                  .radio
+                    input.radio__input(id="diagnostics_1" name="Lead[diagnostics]" type="radio" value="Да, точная диагностика для меня важна")
+                    label.radio__label(for="diagnostics_1") Да, точная диагностика для меня важна
+                  .radio
+                    input.radio__input(id="diagnostics_2" name="Lead[diagnostics]" type="radio" value="Да, так быстрее, чем в поликлинике")
+                    label.radio__label(for="diagnostics_2") Да, так быстрее, чем в поликлинике
+                  .radio
+                    input.radio__input(id="diagnostics_3" name="Lead[diagnostics]" type="radio" value="Да, хотелось бы обследоваться бесплатно")
+                    label.radio__label(for="diagnostics_3") Да, хотелось бы обследоваться бесплатно
+                .options__item
+                  +image('quiz/', '4', 'Фото диагностики на 3D-сканере «Траст-М»', 'Диагностика пациента на 3D-сканере «Траст-М»', 'jpg')(class="options__image")
+          
+        .quiz__tab
+          .quiz__question.question
+            span.question__number 5
+            span.question__main.wow Когда планируете прийти на БЕСПЛАТНЫЙ прием?
+            span.question__hint Выберите один вариант
+          .quiz__inner
+            .quiz__options.options
+              .options__wrap
+                .options__item
+                  .radio
+                    input.radio__input(id="plan-to-come_1" name="Lead[plan-to-come]" type="radio" value="Как можно быстрее")
+                    label.radio__label(for="plan-to-come_1") Как можно быстрее
+                  .radio
+                    input.radio__input(id="plan-to-come_2" name="Lead[plan-to-come]" type="radio" value="В ближайшие дни")
+                    label.radio__label(for="plan-to-come_2") В ближайшие дни
+                  .radio
+                    input.radio__input(id="plan-to-come_3" name="Lead[plan-to-come]" type="radio" value="В течение 2-х недель")
+                    label.radio__label(for="plan-to-come_3") В течение 2-х недель
+                .options__item
+                  +image('quiz/', '5', 'Фото консультации невролога', 'Консультация невролога', 'jpg')(class="options__image")
+          
+        .quiz__final
+          .quiz__question.question.question_final
+            span.question__main.wow Оператор свяжется с вами и поможет подобрать<br> удобное время посещения клиники
+          .quiz__inner.quiz__inner_final
+            .quiz__options.options
+              .options__wrap.options__wrap_final
+                .options__item.options__item_empty
+                .options__item.options__item_final
+                  input.quiz__field(name="Lead[name]" type="text" placeholder="Ваше имя" required)
+                  input.quiz__field(name="Lead[age]" type="tel" placeholder="Ваш возраст")
+                  input.quiz__field(name="Lead[phone]" type="tel" placeholder="Ваш телефон" required)
+                  button.btn.quiz__submit(type="submit") Записаться
+                  .quiz__note
+                    label.checkbox-politics
+                      input.checkbox-politics__default(type="checkbox" name="checkbox" value="ready" checked required)
+                      span.checkbox-politics__new
+                        +svg('check')
+                      | Нажимая на кнопку, вы даете согласие на обработку персональных данных
+                    p.quiz__warning *Акция действует для мужчин и женщин<br> от 40 лет, граждан РФ
+        
+        .quiz__sidebar
+          .quiz__info.info
+            .info__steps
+              p.info__title Ответьте на 5 вопросов и Вы получите БЕСПЛАТНО:
+              ul.info__lst
+                li.info__lst-item.wow(data-wow-delay="0.4s") консультацию невролога
+                li.info__lst-item.wow(data-wow-delay="0.7s") обследование всего позвоночника <span class="text-nowrap">на 3D-сканере «Траст-М»</span>
+                li.info__lst-item.wow(data-wow-delay="1s") рекомендации по лечению
+          .quiz__nav.nav
+            .btn.nav__btn.nav__prev
+              +svg('arrow')
+            button.btn.nav__btn.nav__btn_prev
+              +svg('arrow')
+            button.btn.nav__btn.nav__btn_next
+              | Дальше
+              +svg('arrow')
+
+      p.quiz__politics
+        a(href="/") Политика конфиденциальности
